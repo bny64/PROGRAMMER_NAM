@@ -15,4 +15,4 @@
     - SFTPPracticeByNam.zip
         - SFTP 테스트 해 본 프로젝트
         - SFTP 연결에 필요한 라이브러리, 연결한 소스가 들어있음.
-6. SOURCE_FOLDER : 소스 개념 폴더
+6. SOURCE_FOLDER : 소스 단일 테스트 
