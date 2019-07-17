@@ -8,6 +8,8 @@
     - jfreeChartSource.zip
         - jfreeChart 전체 소스가 들어있음. jar파일 아님.
 4. PROJECT_STUDYING_FOLDER : 공부중인 폴더
+    - spring5fs
+        - 스프링5 프로그래밍 입문 서적 공부 프로젝트
 5. PROJECT_ZIP_FOLDER : 공부끝 난 ZIP파일 프로젝트
     - jfreeChartPractiveByNam.zip
         - jfreeChart로 차트 만들어 본 프로젝트
