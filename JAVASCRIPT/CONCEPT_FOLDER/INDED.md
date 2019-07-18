@@ -1,0 +1,79 @@
+CONCEPT_FOLDER : 개념 정리 폴더
+    - arrowFunction.js
+		- 화살표 함수
+	- assignmentOperator.js
+		- 대입 연산자
+	- bind.js
+		- bind 함수 사용법
+	- call.js
+		- call 함수 사용법
+	- class1.js
+		- 클래스의 개념1
+	- class2.js
+		- 클래스의 개념2
+	- class3.js
+		- 클래스의 개념3
+	- class4.js
+		- 클래스의 개념4
+	- class5.js
+		- 클래스의 개념5
+	- class6.js
+		- 클래스의 개념6
+	- closure.js
+		- 클로저의 개념
+	- copyArray.js
+		- 배열 복사에 대한 내용
+	- copyObject.js
+        - 객체 복사에 대한 내용(얕은 복사, 깊은 복사)
+	- defaultParam.js
+		- 파라미터에 기본값 할당 방법
+	- destructuringAssignment.js
+		- 해체 할당
+	- forIn.js
+		- 객체에서의 for,in 사용
+    - forInforOf.js
+        - for ... in, for ... of 사용법
+	- function.js
+		- 함수의 스코프에 관한 개념
+	- hoisting.js
+		- 호이스팅의 개념
+	- jsonData.js
+		- json데이터 테스트 필요시 사용할 수 있는 데이터
+	- letConst.js
+		- let, const의 개념
+	- letScope.js
+		- let의 스코프
+	- map1.js
+		- map의 사용법
+	- mapVsWeakMap.js
+		- map과 weakMap의 차이
+	- minAndMax.js
+		- 최소값, 최대값을 사용하여 범위안에 있는 난수구하기
+	- numberEPSILON.js
+		- 입실론
+	- parameterDestructing.js
+		- 파라미터의 해체의 개념
+	- putComma.js
+		- 세 자리 수마다 콤마 집어넣기. (퍼포먼스 좋지 않음) 정규식 사용이 더 빠름.
+	- scopeOfVar.js
+		- var 의 스코프
+	- set1.js
+		- set의 사용법
+	- shortAssesment.js
+		- 짧은 조건문 평가
+	- sortArr1.js
+		- 배열 sort 사용법1
+	- sortArr2.js
+		- 배열 sort 사용법2
+	- sortArr3.js
+		- 배열 sort 사용법3
+	- symbol.js
+		- symbol 개념
+	- this.js
+		- 자바스크립트에서의 this 개념
+	- weakMap1.js
+		- weakMap의 사용법1
+	- weakMap2.js
+		- weakMap의 사용법2
+	- weakSet1.js
+		- weakSet의 사용법1
