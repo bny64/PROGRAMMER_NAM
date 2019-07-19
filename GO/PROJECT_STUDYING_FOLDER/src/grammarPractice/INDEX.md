@@ -1,0 +1,21 @@
+grammarPractice : 문법 연습한 패키지
+	- defer.go
+		- defer 사용법
+	- defer2.go
+		- defer 사용법2
+	- defer3.go
+		- defer 사용법3(defer함수안에 다른 함수 실행시)
+	- factoryByClosure.go
+		- 클로저를 사용한 팩토리 함수
+	- for.go
+		- for 문법
+	- forLabel.go
+		- for에서의 lable 사용법
+	- func.go
+		- 함수 사용법
+	- if.go
+		- if문 사용법
+	- strconv.go
+		- strconv 패키지 사용법
+	- variable.go
+		- 변수 문법

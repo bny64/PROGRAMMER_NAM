@@ -2,7 +2,7 @@ package main
 
 import (
 	"grammarPractice"
-	f "fmt"
+	_ "fmt"
 )
 
 func main(){
@@ -10,6 +10,9 @@ func main(){
 	//grammarPractice.IfTest();
 	//grammarPractice.ForTest();
 	//grammarPractice.ForLabelTest();
-	a, b := grammarPractice.FuncTest(100, "hi")
-	f.Println(a, b)
+	//a, b := grammarPractice.FuncTest(100, "hi")
+	//f.Println(a, b)
+	//grammarPractice.StrconvTest("1000")
+	//grammarPractice.DeferTest();
+	grammarPractice.FBCTest();
 }
