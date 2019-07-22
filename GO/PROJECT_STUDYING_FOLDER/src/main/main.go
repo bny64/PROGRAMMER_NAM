@@ -1,11 +1,11 @@
 package main
 
 import (
-	"grammarPractice"
 	_ "fmt"
+	"grammarPractice"
 )
 
-func main(){
+func main() {
 	//grammarPractice.VariableTest();
 	//grammarPractice.IfTest();
 	//grammarPractice.ForTest();
@@ -14,5 +14,7 @@ func main(){
 	//f.Println(a, b)
 	//grammarPractice.StrconvTest("1000")
 	//grammarPractice.DeferTest();
-	grammarPractice.FBCTest();
+	//grammarPractice.FBCTest();
+	//grammarPractice.FBPTest()
+	grammarPractice.SIFTest()
 }
