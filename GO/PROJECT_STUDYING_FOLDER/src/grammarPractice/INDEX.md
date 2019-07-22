@@ -13,9 +13,15 @@ grammarPractice : 문법 연습한 패키지
 		- for에서의 lable 사용법
 	- func.go
 		- 함수 사용법
+	- funcByParam.go
+		- 파라미터로 함수 넘기는 방법
 	- if.go
 		- if문 사용법
+	- intToInt.go
+		- 넘버 최댓값 확인해서 타입 변환 방법
 	- strconv.go
 		- strconv 패키지 사용법
+	- stringsIndexFunc.go
+		- go 라이브러리 strings.IndexFunc 사용법
 	- variable.go
 		- 변수 문법

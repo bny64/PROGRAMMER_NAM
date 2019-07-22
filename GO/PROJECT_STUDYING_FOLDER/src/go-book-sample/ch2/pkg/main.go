@@ -5,7 +5,12 @@ import (
 	"go-book-sample/ch2/lib"
 )
 
+var v rune
+
+func init() {
+	v = '1'
+}
+
 func main() {
-	fmt.Println(lib.IsDigit('1'))
-	fmt.Println(lib.IsDigit('a'))
+	fmt.Println(lib.IsDigit(v))
 }

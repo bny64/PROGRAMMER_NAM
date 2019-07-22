@@ -16,5 +16,7 @@ func main() {
 	//grammarPractice.DeferTest();
 	//grammarPractice.FBCTest();
 	//grammarPractice.FBPTest()
-	grammarPractice.SIFTest()
+	//grammarPractice.SIFTest()
+	//grammarPractice.ITITest()
+	grammarPractice.StringTest()
 }
