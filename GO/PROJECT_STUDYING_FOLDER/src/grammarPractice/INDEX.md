@@ -21,6 +21,8 @@ grammarPractice : 문법 연습한 패키지
 		- 넘버 최댓값 확인해서 타입 변환 방법
 	- strconv.go
 		- strconv 패키지 사용법
+	- stringJoin.go
+		- join을 이용한 문자열 연결
 	- stringsIndexFunc.go
 		- go 라이브러리 strings.IndexFunc 사용법
 	- variable.go

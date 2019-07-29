@@ -18,5 +18,7 @@ func main() {
 	//grammarPractice.FBPTest()
 	//grammarPractice.SIFTest()
 	//grammarPractice.ITITest()
-	grammarPractice.StringTest()
+	//grammarPractice.StringTest()
+	//grammarPractice.JoinTest()
+	grammarPractice.BufferTest()
 }
