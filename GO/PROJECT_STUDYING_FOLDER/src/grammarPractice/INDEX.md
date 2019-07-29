@@ -1,6 +1,8 @@
 grammarPractice : 문법 연습한 패키지
 	- array.go
 		- 배열
+	-changeSlice.go
+		- 슬라이스의 변경. append는 새로운 배열은 만든다.
 	- defer.go
 		- defer 사용법
 	- defer2.go
@@ -19,8 +21,12 @@ grammarPractice : 문법 연습한 패키지
 		- 파라미터로 함수 넘기는 방법
 	- if.go
 		- if문 사용법
+	- insertSlice.go
+		- 슬라이스의 삽입(직접구현)
 	- intToInt.go
 		- 넘버 최댓값 확인해서 타입 변환 방법
+	- map.go
+		- 맵
 	- range.go
 		- range 사용법
 	- slice.go
