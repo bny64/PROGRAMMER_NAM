@@ -1,4 +1,6 @@
 grammarPractice : 문법 연습한 패키지
+	- array.go
+		- 배열
 	- defer.go
 		- defer 사용법
 	- defer2.go
@@ -19,8 +21,16 @@ grammarPractice : 문법 연습한 패키지
 		- if문 사용법
 	- intToInt.go
 		- 넘버 최댓값 확인해서 타입 변환 방법
+	- range.go
+		- range 사용법
+	- slice.go
+		- 슬라이스
+	- sliceSort.go
+		- string슬라이스 정렬 (int, struct등의 정렬은 sort 패키지 참조)
 	- strconv.go
 		- strconv 패키지 사용법
+	- stringBuffer.go
+		- stringbuffer를 이용한 문자열 연결
 	- stringJoin.go
 		- join을 이용한 문자열 연결
 	- stringsIndexFunc.go

@@ -20,5 +20,9 @@ func main() {
 	//grammarPractice.ITITest()
 	//grammarPractice.StringTest()
 	//grammarPractice.JoinTest()
-	grammarPractice.BufferTest()
+	//grammarPractice.BufferTest()
+	//grammarPractice.ArrayTest()
+	//grammarPractice.SliceTest()
+	//grammarPractice.RangeTest()
+	grammarPractice.SliceSortTest()
 }
