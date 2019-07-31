@@ -27,5 +27,7 @@ func main() {
 	//grammarPractice.SliceSortTest()
 	//grammarPractice.ChangeSliceTest()
 	//grammarPractice.InsertSliceTest()
-	grammarPractice.MapTest()
+	//grammarPractice.MapTest()
+	//grammarPractice.PointerTest()
+	grammarPractice.ArrayTransFuncTest()
 }

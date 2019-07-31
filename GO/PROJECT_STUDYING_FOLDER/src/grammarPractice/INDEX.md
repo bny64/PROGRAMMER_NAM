@@ -1,6 +1,8 @@
 grammarPractice : 문법 연습한 패키지
 	- array.go
 		- 배열
+	arrayTransFunc.go
+		- 길이가 큰 배열을 함수나 메서드로 전달할 때는 배열 대신 슬라이스를 사용하는 것이 좋다.
 	-changeSlice.go
 		- 슬라이스의 변경. append는 새로운 배열은 만든다.
 	- defer.go
@@ -27,6 +29,8 @@ grammarPractice : 문법 연습한 패키지
 		- 넘버 최댓값 확인해서 타입 변환 방법
 	- map.go
 		- 맵
+	- pointer.go
+		- 포인터
 	- range.go
 		- range 사용법
 	- slice.go
