@@ -1,7 +1,7 @@
-grammarPractice : 문법 연습한 패키지
+grammarPractice : 문법 연습한 패키지()
 	- array.go
 		- 배열
-	arrayTransFunc.go
+	- arrayTransFunc.go
 		- 길이가 큰 배열을 함수나 메서드로 전달할 때는 배열 대신 슬라이스를 사용하는 것이 좋다.
 	-changeSlice.go
 		- 슬라이스의 변경. append는 새로운 배열은 만든다.
