@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	//grammarPractice2.ObjectExpTest();
-	grammarPractice2.UserCusTypeTest()
+
+	grammarPractice2.SliceMapReceiverTest()
 }

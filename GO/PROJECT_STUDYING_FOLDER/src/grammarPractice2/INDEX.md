@@ -1,5 +1,13 @@
 grammarPractice2 : 문법 연습한 패키지
 	- objectExp.go
 		- go언어의 객체 표현 방식
+	- receiverByPointer.go
+		- 포인터를 받는 리시버 변수
+	- sliceMapReceiver.go
+		- 슬라이스 맵과 리시버
+	- struct.go
+		- 구조체에 대한 설명
 	- userCusType.go
 		- 사용자 정의 타입
+	- userCusType2.go
+		- 사용자 정의 타입2
