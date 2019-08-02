@@ -3,10 +3,11 @@ package main
 import (
 	_ "fmt"
 	_ "grammarPractice"
-	"grammarPractice2"
+	_ "grammarPractice2"
+	"grammarPractice3"
 )
 
 func main() {
 
-	grammarPractice2.SliceMapReceiverTest()
+	grammarPractice3.Interface1Test()
 }
