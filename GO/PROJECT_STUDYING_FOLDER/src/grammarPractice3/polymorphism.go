@@ -17,42 +17,12 @@ type DiscountItem struct {
 	discountRate float64
 }
 
-type Rental struct {
-	name         string
-	feePerDay    float64
-	periodLength int
-	RentalPeriod
-}
-
-type RentalPeriod int
-
 func displayCost(c Coster) {
 	fmt.Println("cost :", c.Cost())
 }
 
 func (t Item) Cost() float64 {
 	return t.price * float64(t.quantity)
-}
-
-const (
-	Days RentalPeriod = iota
-	Weeks
-	Months
-)
-
-func (p RentalPeriod) Todays() int {
-	switch p {
-	case Weeks:
-		return 7
-	case Months:
-		return 30
-	default:
-		return 1
-	}
-}
-
-func (r Rental) Cost() float64 {
-	return r.feePerDay * float64(r.Todays()*r.periodLength)
 }
 
 func (t DiscountItem) Cost() float64 {
