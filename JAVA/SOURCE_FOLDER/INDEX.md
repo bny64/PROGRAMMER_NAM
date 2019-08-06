@@ -3,5 +3,9 @@ SOURCE_FOLDER : 소스 단일 테스트
 		- 에러처리 관련 spring advice
 	- FileUtil.java
 		- 파일 다운로드 (+zip)
+	- HTMLToString.java
+		- html파일을 string으로 변환
+	- JavaMail.java
+		- java에서 메일 보내기
 	- SFTPFileUtil.java
 		- SFTP 파일 처리
