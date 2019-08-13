@@ -9,5 +9,5 @@ import (
 
 func main() {
 
-	grammarPractice3.PolymorPhismTest()
+	grammarPractice3.IoWriterInterfaceTest()
 }
