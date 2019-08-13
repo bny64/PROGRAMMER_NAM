@@ -1,6 +1,9 @@
 package grammarPractice3
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type Coster interface {
 	Cost() float64
@@ -26,13 +29,19 @@ type Rental struct {
 
 type RentalPeriod int
 
+type Items []Coster
+
+type Stringer interface {
+	String() string
+}
+
 const (
 	Days RentalPeriod = iota
 	Weeks
 	Months
 )
 
-func (p RentalPeriod) ToDays() int {
+func (p RentalPeriod) Todays() int {
 	switch p {
 	case Weeks:
 		return 7
@@ -44,7 +53,7 @@ func (p RentalPeriod) ToDays() int {
 }
 
 func (r Rental) Cost() float64 {
-	return r.feePerDay * float64(r.ToDays()*r.periodLength)
+	return r.feePerDay * float64(r.Todays()*r.periodLength)
 }
 
 func displayCost(c Coster) {
@@ -57,6 +66,33 @@ func (t Item) Cost() float64 {
 
 func (t DiscountItem) Cost() float64 {
 	return t.Item.Cost() * (1.0 - t.discountRate/100)
+}
+
+func (ts Items) Cost() (c float64) {
+	for _, t := range ts {
+		c += t.Cost()
+	}
+	return
+}
+
+func (t Item) String() string {
+	return fmt.Sprintf("[%s] %.0f", t.name, t.Cost())
+}
+
+func (t DiscountItem) String() string {
+	return fmt.Sprintf("%s => %.0f(%.0f%s DC)", t.Item.String(), t.Cost(), t.discountRate, "%")
+}
+
+func (t Rental) String() string {
+	return fmt.Sprintf("[%s] %.0f", t.name, t.Cost())
+}
+func (ts Items) String() string {
+	var s []string
+	for _, t := range ts {
+		s = append(s, fmt.Sprint(t))
+	}
+
+	return fmt.Sprintf("%d items. total: %.0f\n\t- %s", len(ts), ts.Cost(), strings.Join(s, "\n\t- "))
 }
 
 func PolymorPhismTest() {
@@ -75,4 +111,12 @@ func PolymorPhismTest() {
 
 	displayCost(shirt)
 	displayCost(video)
+
+	items := Items{shirt, video, eventShoes}
+	displayCost(items)
+
+	fmt.Println(shirt)
+	fmt.Println(video)
+	fmt.Println(eventShoes)
+	fmt.Println(items)
 }
