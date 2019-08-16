@@ -1,0 +1,9 @@
+grammarPractice2 : 문법 연습한 패키지
+	- bufferedChan.go
+		- 버퍼드 채널
+	- goChannel.go
+		- 채널 사용법
+	- goRoutine1.go
+		- 간단한 고 루틴 설명
+	- goSelect.go
+		- 채널의 동작 순서(중요, 이해 어려움)

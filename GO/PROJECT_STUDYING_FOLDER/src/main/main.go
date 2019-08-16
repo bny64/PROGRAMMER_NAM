@@ -4,10 +4,11 @@ import (
 	_ "fmt"
 	_ "grammarPractice"
 	_ "grammarPractice2"
-	"grammarPractice3"
+	_ "grammarPractice3"
+	"grammarPractice4"
 )
 
 func main() {
 
-	grammarPractice3.TypeAssertionTest()
+	grammarPractice4.GoRoutine1Test()
 }

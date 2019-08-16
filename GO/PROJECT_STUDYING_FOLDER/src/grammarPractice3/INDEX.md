@@ -1,4 +1,4 @@
-grammarPractice2 : 문법 연습한 패키지
+grammarPractice3 : 문법 연습한 패키지
 	- anonInterface.go
 		- 익명 인터페이스
 	- emptyInterface.go
