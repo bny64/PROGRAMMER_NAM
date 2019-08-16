@@ -9,5 +9,5 @@ import (
 
 func main() {
 
-	grammarPractice3.IoWriterInterfaceTest()
+	grammarPractice3.TypeAssertionTest()
 }

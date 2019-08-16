@@ -7,3 +7,5 @@ grammarPractice2 : 문법 연습한 패키지
 		- 인터페이스의 정의
 	- polymorphism.go
 		- 인터페이스의 사용법.
+	- typeAssertion.go
+		타입 어설션으로 타입 변환
