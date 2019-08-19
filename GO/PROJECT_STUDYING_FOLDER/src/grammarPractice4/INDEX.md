@@ -17,3 +17,7 @@ grammarPractice2 : 문법 연습한 패키지
 		- 공유 데이터를 뮤텍스로 보호하는 방법
 	- syncOnce.go
 		- 특정 함수를 한 번만 수행해야 할 때 사용하는 once
+	- syncWaitGroup.go
+		- 고루틴과 waitGroup의 동작
+	- syncWaitGroup.go
+		- 고루틴과 waitGroup의 동작2
