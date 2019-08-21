@@ -8,7 +8,7 @@ import (
 func GoroutineTimeoutTest() {
 	quit := make(chan struct{})
 	done := process(quit) //string 채널
-	timeout := time.After(1 * time.Second)
+	timeout := time.After(1 * time.Millisecond)
 
 	select {
 	//done채널과 timeout채널을 동시에 대기하다가 먼저 수신되는 케이스를 수행.
