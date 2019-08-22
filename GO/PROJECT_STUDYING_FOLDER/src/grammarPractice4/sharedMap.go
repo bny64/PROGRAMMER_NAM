@@ -35,7 +35,7 @@ func (sm SharedMap) Remove(k string) {
 	sm.c <- command{action: remove, key: k}
 }
 
-func (sm ShareMap) Count() int {
+func (sm SharedMap) Count() int {
 	callback := make(chan interface{})
 	sm.c <- command{action: count, result: callback}
 	return (<-callback).(int)
