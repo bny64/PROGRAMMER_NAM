@@ -1,0 +1,9 @@
+grammarPractice5 : 문법 연습한 패키지
+	- customErrorType.go
+		- 에러타입을 구조체로 정의해 사용자 정의 에러 타입을 이용해 에러를 처리.
+	- error1.go
+		- 간단한 에러처리
+	- error2.go
+		- 에러 함수 내부에 적용해보기
+	- panic1.go
+		- 간단한 패닉함수의 예
