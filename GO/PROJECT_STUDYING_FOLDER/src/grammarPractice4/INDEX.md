@@ -11,13 +11,19 @@ grammarPractice2 : 문법 연습한 패키지
 		- select 문에서의 default 케이스
 	- goRoutine1.go
 		- 간단한 고 루틴 설명
+	- goroutineTimeout.go
+		- 고 루틴의 타임아웃 처리
 	- goSelect.go
 		- 채널의 동작 순서(중요, 이해 어려움)
+	- sharedMap.go
+		- 채널의 활용(어려움. 첫번 째 이해못함.)
+	- syncAtomic.go
+		- 원자값 사용
 	- syncMutex.go
 		- 공유 데이터를 뮤텍스로 보호하는 방법
 	- syncOnce.go
 		- 특정 함수를 한 번만 수행해야 할 때 사용하는 once
 	- syncWaitGroup.go
 		- 고루틴과 waitGroup의 동작
-	- syncWaitGroup.go
+	- syncWaitGroup2.go
 		- 고루틴과 waitGroup의 동작2
