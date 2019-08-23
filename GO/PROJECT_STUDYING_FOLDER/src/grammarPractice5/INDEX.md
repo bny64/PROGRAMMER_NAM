@@ -1,4 +1,6 @@
 grammarPractice5 : 문법 연습한 패키지
+	- customError.go
+		- 에러 확인 함수를 사용하기 위해 만들어본 예시
 	- customErrorType.go
 		- 에러타입을 구조체로 정의해 사용자 정의 에러 타입을 이용해 에러를 처리.
 	- error1.go
@@ -7,3 +9,7 @@ grammarPractice5 : 문법 연습한 패키지
 		- 에러 함수 내부에 적용해보기
 	- panic1.go
 		- 간단한 패닉함수의 예
+	- recover1.go
+		- recover()함수의 사용.
+	- recover2.go
+		-panic, defer, recover를 사용한 예제
