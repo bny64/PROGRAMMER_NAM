@@ -18,4 +18,6 @@ grammarPractice5 : 문법 연습한 패키지
 	- recover1.go
 		- recover()함수의 사용.
 	- recover2.go
-		-panic, defer, recover를 사용한 예제                                                    
+		-panic, defer, recover를 사용한 예제  
+	- reflectFunc.go
+		- reflect를 사용한 메서드 동적 호출...(어려움)
