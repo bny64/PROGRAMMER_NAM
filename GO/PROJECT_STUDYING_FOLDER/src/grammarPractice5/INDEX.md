@@ -1,4 +1,6 @@
 grammarPractice5 : 문법 연습한 패키지
+	- closureError.go
+		- 클로저로 에러 처리.
 	- customError.go
 		- 에러 확인 함수를 사용하기 위해 만들어본 예시
 	- customErrorType.go
@@ -7,9 +9,13 @@ grammarPractice5 : 문법 연습한 패키지
 		- 간단한 에러처리
 	- error2.go
 		- 에러 함수 내부에 적용해보기
+	- heap.go
+		- go언어에서의 heap 사용
+	- netHttpError.go
+		- http에러 처리(실제로 실행해보지 않음.)
 	- panic1.go
 		- 간단한 패닉함수의 예
 	- recover1.go
 		- recover()함수의 사용.
 	- recover2.go
-		-panic, defer, recover를 사용한 예제
+		-panic, defer, recover를 사용한 예제                                                    
