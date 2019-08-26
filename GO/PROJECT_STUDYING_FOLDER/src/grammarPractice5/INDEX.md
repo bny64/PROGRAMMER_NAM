@@ -11,6 +11,8 @@ grammarPractice5 : 문법 연습한 패키지
 		- 에러 함수 내부에 적용해보기
 	- heap.go
 		- go언어에서의 heap 사용
+	- methodReflectCall.go
+		- reflect를 사용한 동적 메서드의 동적 호출
 	- netHttpError.go
 		- http에러 처리(실제로 실행해보지 않음.)
 	- panic1.go
@@ -21,3 +23,5 @@ grammarPractice5 : 문법 연습한 패키지
 		-panic, defer, recover를 사용한 예제  
 	- reflectFunc.go
 		- reflect를 사용한 메서드 동적 호출...(어려움)
+	- testLib.go
+		- testing 라이브러리 
