@@ -1,14 +1,16 @@
 package main
 
 import (
-	_ "fmt"
-	_ "grammarPractice"
-	_ "grammarPractice2"
-	_ "grammarPractice3"
-	"grammarPractice4"
+	"fmt"
+	"net/http"
 )
 
 func main() {
-
-	grammarPractice4.GoRoutine1Test()
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintln(w, "welcome!")
+	})
+	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintln(w, "about")
+	})
+	http.ListenAndServe(":8080", nil)
 }
