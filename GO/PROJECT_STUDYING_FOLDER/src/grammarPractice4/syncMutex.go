@@ -30,11 +30,13 @@ func Mutex1Test() {
 	for i := 0; i < 1000; i++ {
 		go func() {
 			c.increment2()
+			fmt.Println("c.increment2")
 			done <- struct{}{} //done 채널에 완료 신호 전송
 		}()
 	}
 
 	for i := 0; i < 1000; i++ {
+		fmt.Println("<-done")
 		<-done //채널에서 값을 꺼냄
 	}
 
