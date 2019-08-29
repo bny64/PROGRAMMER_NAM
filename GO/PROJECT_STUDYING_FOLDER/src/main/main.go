@@ -2,39 +2,53 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 	_ "strings"
+	"time"
 )
+
+type User struct {
+	Id        string
+	AddressId string
+}
 
 func main() {
 
-	r := &router{make(map[string]map[string]HandlerFunc)}
+	s := NewServer()
 
-	r.HandleFunc("GET", "/", func(c *Context) {
-		fmt.Fprintln(c.ResponseWriter, "welcome!")
+	s.HandleFunc("GET", "/", func(c *Context) {
+		c.RenderTemplate("/public/index.html", map[string]interface{}{"time": time.Now()})
+		//fmt.Fprintln(c.ResponseWriter, "welcome!")
 	})
 
-	r.HandleFunc("GET", "/about", func(c *Context) {
+	s.HandleFunc("GET", "/about", func(c *Context) {
 		fmt.Fprintln(c.ResponseWriter, "about")
 	})
 
-	r.HandleFunc("GET", "/users/:id", logHandler(func(c *Context) {
-		fmt.Fprintf(c.ResponseWriter, "retrieve user %v\n", c.Params["id"])
-	}))
+	s.HandleFunc("GET", "/users/:id", func(c *Context) {
+		u := User{Id: c.Params["id"].(string)}
+		c.RenderXml(u)
+		/* if c.Params["id"] == "0" {
+			panic("id is zero")
+		}
 
-	r.HandleFunc("GET", "/users/:user_id/addresses/:address_id", func(c *Context) {
+		fmt.Fprintf(c.ResponseWriter, "retrieve user %v\n", c.Params["id"]) */
+	})
+
+	s.HandleFunc("GET", "/users/:user_id/addresses/:address_id", func(c *Context) {
+		u := User{c.Params["user_id"].(string), c.Params["address_id"].(string)}
+		c.RenderJson(u)
 		fmt.Fprintf(c.ResponseWriter, "retrieve user %v's address %v\n", c.Params["user_id"], c.Params["address_id"])
 	})
 
-	r.HandleFunc("POST", "/users", func(c *Context) {
-		fmt.Fprintf(c.ResponseWriter, "create user\n")
+	s.HandleFunc("POST", "/users", func(c *Context) {
+		fmt.Fprintln(c.ResponseWriter, c.Params)
 	})
 
-	r.HandleFunc("POST", "/users/:user_id/addresses", func(c *Context) {
+	s.HandleFunc("POST", "/users/:user_id/addresses", func(c *Context) {
 		fmt.Fprintf(c.ResponseWriter, "create user %v's address\n", c.Params["user_id"])
 	})
 
-	http.ListenAndServe(":8080", r)
+	s.Run(":8080")
 
 	/* http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "welcome!")
