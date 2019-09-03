@@ -1,0 +1,29 @@
+grammarPractice2 : 문법 연습한 패키지
+	- bufferedChan.go
+		- 버퍼드 채널
+	- dontUserMutex.go
+		- 뮤텍스를 사용하지 않았을 때 값이 보호되지 않음.
+		- 예전에는 보호되지 않았던 것 같은데 go기능이 변경된 듯함.
+		- 지금은 뮤텍스를 사용하지 않아도 보호됨.
+	- goChannel.go
+		- 채널 사용법
+	- goDefault.go
+		- select 문에서의 default 케이스
+	- goRoutine1.go
+		- 간단한 고 루틴 설명
+	- goroutineTimeout.go
+		- 고 루틴의 타임아웃 처리
+	- goSelect.go
+		- 채널의 동작 순서(중요, 이해 어려움)
+	- sharedMap.go
+		- 채널의 활용(어려움. 첫번 째 이해못함.)
+	- syncAtomic.go
+		- 원자값 사용
+	- syncMutex.go
+		- 공유 데이터를 뮤텍스로 보호하는 방법
+	- syncOnce.go
+		- 특정 함수를 한 번만 수행해야 할 때 사용하는 once
+	- syncWaitGroup.go
+		- 고루틴과 waitGroup의 동작
+	- syncWaitGroup2.go
+		- 고루틴과 waitGroup의 동작2

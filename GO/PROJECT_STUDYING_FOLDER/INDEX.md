@@ -1,3 +1,2 @@
-1. bin : 실행파일
-2. pkg : go install로 만든 패키지
-3. src : 실제 사용하는 코드
+1. project1 : 다양한 고 연습 폴더
+2. project2 : revel을 사용한 고 웹프로그래밍
