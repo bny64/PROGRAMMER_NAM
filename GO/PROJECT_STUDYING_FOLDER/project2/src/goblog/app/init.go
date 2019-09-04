@@ -2,6 +2,7 @@ package app
 
 import (
 	"github.com/revel/revel"
+	"time"
 )
 
 var (
@@ -30,6 +31,9 @@ func init() {
 		revel.ActionInvoker,           // Invoke the action.
 	}
 
+	revel.TemplateFuncs["formatDate"] = func(date time.Time) string {
+		return date.Format("2006/01/02 03:04")
+	}
 	// Register startup functions with OnAppStart
 	// revel.DevMode and revel.RunMode only work inside of OnAppStart. See Example Startup Script
 	// ( order dependent )
