@@ -7,6 +7,8 @@ import (
 	"fmt"
 	"strings"
 	_ "log"
+	"goblog/app/models"	
+	_ "strings"	
 )
 
 type GormController struct {
@@ -34,8 +36,21 @@ func GetDBConn() *gorm.DB {
 
 	Gdb.DB()
 	Gdb.LogMode(true)
-
+	initTable()
 	return Gdb
+}
+
+func initTable(){
+	
+	if result := Gdb.HasTable("posts"); !result {
+		Gdb.Table("posts").CreateTable(&models.Post{})
+	}
+	
+	if result := Gdb.HasTable("comments"); !result {
+		Gdb.Table("comments").CreateTable(&models.Comment{})
+	}
+	//패키지에서 함수, 구조체 단순히 문자열로 받을 수 있는지?
+	//ex) models["func or struct"]
 }
 
 func getParamString(param string, defaultValue string) string {	

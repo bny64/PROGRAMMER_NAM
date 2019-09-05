@@ -17,6 +17,9 @@
                 <td>{{.Title}}</td>
                 <td>{{formatDate .CreatedAt}}</td>
                 <td>{{formatDate .UpdatedAt}}</td>
+                <td><a href="{{url "Post.Show" .Id}}">Show</a></td>
+                <td><a href="{{url "Post.Edit" .Id}}">Edit</a></td>
+                <td><a href="{{url "Post.Destroy" .Id}}">Delete</a></td>
             </tr>
         {{end}}
     </tbody>
