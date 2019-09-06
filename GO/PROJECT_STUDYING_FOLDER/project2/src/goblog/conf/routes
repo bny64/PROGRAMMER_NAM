@@ -9,6 +9,12 @@ module:testrunner
 # 처음 접속 했을 때 보여줄 페이지.
 GET     /                                       Home.Index
 
+#App
+GET     /login                                  App.Login
+POST    /login                                  App.CreateSession
+GET     /logout                                 App.DestroySession
+DELETE  /logout                                 App.DestroySession
+
 ## Post
 
 GET     /posts                                  Post.Index
@@ -21,6 +27,17 @@ POST    /posts                                  Post.Create
 POST    /posts/:id                              Post.Update
 
 PUT     /posts/:id                              Post.Update
+
+#Comment
+
+DELETE  /posts/:postId/comments/:id             Comment.Destroy
+GET     /posts/:postId/comments/:id/delete      Comment.Destroy
+POST    /posts/:postId/comments                 Comment.Create
+
+#가장 마지막 메서드로 체크하나?
+#DELETE  /posts/:postId/comments/:id             Comment.Destroy
+#GET     /posts/:postId/comments/:id/delete      Comment.Destroy
+# 이순서는 첫번 째 DELETE가 작동됨.
 
 
 # Ignore favicon requests

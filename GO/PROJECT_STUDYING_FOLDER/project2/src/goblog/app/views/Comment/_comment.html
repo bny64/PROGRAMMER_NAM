@@ -1,0 +1,16 @@
+{{$post := .post}}
+{{$currentUser := .currentUser}}
+{{range .post.Comments}}
+    <p>
+        <mark>
+            <b>{{.Commenter}}:</b>
+        </mark>
+        {{.Body}}
+        <small>
+            ({{formatDate .CreatedAt}})
+        </small>
+        {{if isAdmin $currentUser}}
+        <a href="{{url "Comment.Destroy" $post.Id .Id}}">Destroy</a>
+        {{end}}
+    </p>
+{{end}}

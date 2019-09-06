@@ -2,6 +2,7 @@ package app
 
 import (
 	"github.com/revel/revel"
+	"goblog/app/models"
 	"time"
 )
 
@@ -33,6 +34,10 @@ func init() {
 
 	revel.TemplateFuncs["formatDate"] = func(date time.Time) string {
 		return date.Format("2006/01/02 03:04")
+	}
+
+	revel.TemplateFuncs["isAdmin"] = func(currentUser *models.User) bool {
+		return currentUser != nil && currentUser.Role == "admin"
 	}
 	// Register startup functions with OnAppStart
 	// revel.DevMode and revel.RunMode only work inside of OnAppStart. See Example Startup Script

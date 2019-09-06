@@ -2,13 +2,14 @@ package controllers
 
 import (
 	"github.com/revel/revel"	
-	"github.com/jinzhu/gorm"
+	"github.com/jinzhu/gorm"	
 	_ "github.com/go-sql-driver/mysql"
 	"fmt"
 	"strings"
 	_ "log"
 	"goblog/app/models"	
-	_ "strings"	
+	_ "strings"
+	"golang.org/x/crypto/bcrypt"
 )
 
 type GormController struct {
@@ -17,6 +18,13 @@ type GormController struct {
 }
 
 var Gdb *gorm.DB
+
+const (
+	DefaultName,
+	DefaultRole,
+	DefaultUsername,
+	DefaultPassword = "Admin","admin","admin","admin"
+)
 
 func InitDB(){	
 	_ = GetDBConn()
@@ -42,15 +50,13 @@ func GetDBConn() *gorm.DB {
 
 func initTable(){
 	
-	if result := Gdb.HasTable("posts"); !result {
-		Gdb.Table("posts").CreateTable(&models.Post{})
-	}
-	
-	if result := Gdb.HasTable("comments"); !result {
-		Gdb.Table("comments").CreateTable(&models.Comment{})
-	}
+	Gdb.AutoMigrate(&models.Post{}, &models.Comment{}, &models.User{})
 	//패키지에서 함수, 구조체 단순히 문자열로 받을 수 있는지?
 	//ex) models["func or struct"]
+
+	bcryptPassword, _ := bcrypt.GenerateFromPassword([]byte(DefaultPassword), bcrypt.DefaultCost)
+
+	Gdb.Where(models.User{Name:DefaultName, Role:DefaultRole, Username:DefaultUsername}).Attrs(models.User{Password : string(bcryptPassword)}).FirstOrCreate(&models.User{})
 }
 
 func getParamString(param string, defaultValue string) string {	
@@ -87,5 +93,26 @@ func getConnectingString() string {
 
 func (c *GormController) SetDB() revel.Result {	
 	c.Txn = Gdb
+	return nil
+}
+
+func(c *GormController) Begin() revel.Result {
+	c.Txn = Gdb.Begin()
+	return nil
+}
+
+func (c *GormController) Rollback() revel.Result {
+	if c.Txn != nil {
+		c.Txn.Rollback()
+		c.Txn = nil
+	}
+	return nil
+}
+
+func (c *GormController) Commit() revel.Result {
+	if c.Txn != nil {
+		c.Txn.Commit()
+		c.Txn = nil
+	}
 	return nil
 }

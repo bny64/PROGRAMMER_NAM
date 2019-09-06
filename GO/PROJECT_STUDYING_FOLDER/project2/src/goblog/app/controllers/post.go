@@ -11,8 +11,30 @@ import (
 )
 
 type Post struct {
-	*revel.Controller //*revel.Controller를 임베디드 필드로 지정
-	GormController
+	App
+}
+
+func (c Post) CheckUser() revel.Result{
+	log.Println("PostController CheckUser()")
+	switch c.MethodName {
+	case "Index", "Show":
+		log.Println("@@@@@@@@@@@@ CurrentUser : ", c.CurrentUser)
+		log.Println("@@@@@@@@@@@@ Session : ", c.Session)
+		return nil
+	}
+
+	log.Println("curUser : ", c.CurrentUser)
+	if c.CurrentUser == nil {
+		c.Flash.Error("Please log in first")
+		return c.Redirect(App.Login)
+	}
+
+	if c.CurrentUser.Role != "admin" {
+		c.Response.Status = 401
+		c.Flash.Error("You're not admin")
+		return c.Redirect(App.Login)
+	}
+	return nil
 }
 
 func (c Post) Index() revel.Result {		
@@ -46,7 +68,7 @@ func (c Post) Create(title, body string) revel.Result {
 
 func (c Post) Show(id int) revel.Result {
 	post := getPost(c.Txn, id)
-
+	log.Println("post : ", post)
 	return c.Render(post)
 }
 
@@ -56,7 +78,23 @@ func getPost(txn *gorm.DB, id int) (models.Post){
 		panic(err)
 	}
 	
+	post.Comments = getComments(txn, id)
+
 	return post
+}
+
+func getComments(txn *gorm.DB, postId int) (comments []models.Comment){
+	var comment []models.Comment
+	
+	if err:= txn.Where("post_id = ?", postId).Find(&comment).Order("created_at desc").Error; err != nil {
+		panic(err)
+	}
+
+	for _, val := range comment {
+		comments = append(comments, val)
+	}
+	
+	return
 }
 
 func (c Post) Edit(id int) revel.Result {
@@ -66,6 +104,7 @@ func (c Post) Edit(id int) revel.Result {
 }
 
 func (c Post) Update(id int, title, body string) revel.Result {
+	log.Println("PostController Update()")
 	post := models.Post{}
 	if err := c.Txn.Model(&post).Where("id = ?", id).Updates(map[string]interface{}{"title":title, "body":body}).Error; err != nil {
 		panic(err)
