@@ -9,5 +9,5 @@ type Post struct {
 	Title string `gorm:"column:title;type:TEXT;NOT NULL"`
 	Body string `gorm:"column:body;type:TEXT;NOT NULL"`
 	CreatedAt time.Time `gorm:"column:created_at;type:DATETIME;NOT NULL"`
-	UpdatedAt time.Time `gorm:"column:updated_at;type:DATETIME;NOT NULL"`	
+	UpdatedAt time.Time `gorm:"column:updated_at;type:DATETIME;NOT NULL"`		
 }
