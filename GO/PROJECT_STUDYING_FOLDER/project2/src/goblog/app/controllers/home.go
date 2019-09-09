@@ -6,10 +6,14 @@ import (
 )
 
 type Home struct {
+	App
 	*revel.Controller
 }
 
 func(c Home) Index() revel.Result {
-	log.Println("home controller")
+	
+	log.Println("HOME INDEX : ", c.Session)
+	log.Println("HOME INDEX : ", c.CurrentUser)
+
 	return c.Render()
 }

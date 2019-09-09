@@ -15,15 +15,15 @@ type Post struct {
 }
 
 func (c Post) CheckUser() revel.Result{
-	log.Println("PostController CheckUser()")
+	
+	log.Println("post.go : CheckUser Func : c.Session : ", c.Session)
+	log.Println("post.go : CheckUser Func : c.CurrentUser : ", c.CurrentUser)
+	
 	switch c.MethodName {
-	case "Index", "Show":
-		log.Println("@@@@@@@@@@@@ CurrentUser : ", c.CurrentUser)
-		log.Println("@@@@@@@@@@@@ Session : ", c.Session)
+	case "Index", "Show":		
 		return nil
 	}
-
-	log.Println("curUser : ", c.CurrentUser)
+	
 	if c.CurrentUser == nil {
 		c.Flash.Error("Please log in first")
 		return c.Redirect(App.Login)
@@ -38,7 +38,10 @@ func (c Post) CheckUser() revel.Result{
 }
 
 func (c Post) Index() revel.Result {		
-	log.Println("PostController - Index()")
+	
+	log.Println("post.go : Index Func : c.Session : ", c.Session)
+	log.Println("post.go : Index Func : c.CurrentUser : ", c.CurrentUser)
+
 	var posts []models.Post
 	if err := c.Txn.Find(&posts).Error; err != nil {
 		panic(err)
@@ -68,7 +71,10 @@ func (c Post) Create(title, body string) revel.Result {
 
 func (c Post) Show(id int) revel.Result {
 	post := getPost(c.Txn, id)
-	log.Println("post : ", post)
+	
+	log.Println("post.go : Show Func : c.Session : ", c.Session)
+	log.Println("post.go : Show Func : c.CurrentUser : ", c.CurrentUser)
+
 	return c.Render(post)
 }
 
