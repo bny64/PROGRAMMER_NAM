@@ -5,6 +5,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
 	
 	public static void main(String[] args) {
+		
+		/**
+		 * AnnotationConfigApplicationContext : 자바 애노테이션을 이용한 클래스로부터 객체 설정 정보를 가져온다.
+		 * GenericXmlApplicationContext : XML로부터 객체 설정 정보를 가져온다.
+		 * GenericGroovyApplicationContext : 그루비 코드를 이용해 설정정보를 가져온다.
+		 * */
+		
 		AnnotationConfigApplicationContext ctx = 
 				new AnnotationConfigApplicationContext(AppContext.class);
 		//자바 설정에서 정보를 읽어와 빈 객체를 생성하고 관리.
